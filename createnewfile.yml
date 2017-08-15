@@ -1,0 +1,9 @@
+---
+- hosts: agent
+  connection: ssh
+  become: yes
+  become_method: sudo 
+  tasks: 
+    - name: create a new file with touch 
+      command: touch /tmp/testfile 
+

@@ -1,0 +1,18 @@
+---
+- hosts: agent
+  connection: ssh
+  become: yes
+  become_method: sudo 
+  tasks: 
+    - name: Install tree command 
+      yum: 
+        name: tree
+        state: present 
+#        dest: /tmp
+      when: ansible_os_family == "RedHat"
+#    - name: remove tree package
+#      yum: 
+#        name:tree
+#        state: absent
+        
+ 
